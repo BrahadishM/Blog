@@ -7,8 +7,7 @@ author: Brahadish M
 email: brahadish.m@gmail.com
 linkedin_url: https://www.linkedin.com/in/brahadishm
 github_url: https://github.com/BrahadishM
-baseurl: ""   # e.g. "/your-repo-name" if publishing at username.github.io/repo-name
-url: ""       # e.g. "https://yourusername.github.io"
+https://BrahadishM.github.io/Blog/
 
 markdown: kramdown
 permalink: /log/:year/:month/:day/:title/
