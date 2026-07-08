@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+{% feed_meta %}
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="dot"></span>{{ site.author }}
+    </a>
+    <ul class="nav-pins">
+      <li><a class="nav-pin" href="{{ '/' | relative_url }}#profile">PROFILE</a></li>
+      <li><a class="nav-pin" href="{{ '/' | relative_url }}#experience">EXPERIENCE</a></li>
+      <li><a class="nav-pin" href="{{ '/' | relative_url }}#projects">PROJECTS</a></li>
+      <li><a class="nav-pin" href="{{ '/' | relative_url }}#skills">SKILLS</a></li>
+      <li><a class="nav-pin" href="{{ '/blog.html' | relative_url }}">LOG</a></li>
+      <li><a class="nav-pin" href="{{ '/' | relative_url }}#contact">CONTACT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-top: 40px; padding-bottom: 20px;">
+  {{ content }}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; width:100%;">
+    <span>&copy; {{ 'now' | date: "%Y" }} {{ site.author }}</span>
+    <span>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a> ·
+      <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">linkedin</a> ·
+      <a href="{{ site.github_url }}" target="_blank" rel="noopener">github</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

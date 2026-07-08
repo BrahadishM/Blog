@@ -1,0 +1,30 @@
+title: Brahadish M
+tagline: Microelectronics & Embedded Systems
+description: >-
+  Portfolio and lab notebook of Brahadish M — MSc Microelectronics Systems
+  Design student, VLSI and embedded systems engineer in training.
+author: Brahadish M
+email: brahadish.m@gmail.com
+linkedin_url: https://www.linkedin.com/in/brahadishm
+github_url: https://github.com/BrahadishM
+baseurl: ""   # e.g. "/your-repo-name" if publishing at username.github.io/repo-name
+url: ""       # e.g. "https://yourusername.github.io"
+
+markdown: kramdown
+permalink: /log/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
