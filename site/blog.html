@@ -1,0 +1,24 @@
+---
+layout: default
+title: Log
+---
+
+<div class="section-tag"><span class="idx">LOG</span><span>Notes, builds, and whatever else</span></div>
+<h2 style="margin-bottom: 8px;">The Log</h2>
+<p class="lede">Project notes, things I'm learning, and posts that don't belong on a CV.</p>
+
+{% if site.posts.size > 0 %}
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li class="post-item">
+    <span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
+    <div>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty-log">// no entries yet — add a markdown file to _posts/ to get started</p>
+{% endif %}
