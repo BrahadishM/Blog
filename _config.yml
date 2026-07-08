@@ -1,4 +1,4 @@
-title: Brahadish M
+title: Brahadish Meera
 tagline: Microelectronics & Embedded Systems
 description: >-
   Portfolio and lab notebook of Brahadish M — MSc Microelectronics Systems
@@ -7,7 +7,8 @@ author: Brahadish M
 email: brahadish.m@gmail.com
 linkedin_url: https://www.linkedin.com/in/brahadishm
 github_url: https://github.com/BrahadishM
-https://BrahadishM.github.io/Blog/
+baseurl: "/Blog"
+url: "https://BrahadishM.github.io"
 
 markdown: kramdown
 permalink: /log/:year/:month/:day/:title/
