@@ -8,6 +8,12 @@
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  (function(){
+    var saved = localStorage.getItem('theme');
+    document.documentElement.setAttribute('data-theme', saved === 'light' ? 'light' : 'dark');
+  })();
+</script>
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 {% feed_meta %}
 </head>
@@ -24,6 +30,7 @@
       <li><a class="nav-pin" href="{{ '/blog.html' | relative_url }}">LOG</a></li>
       <li><a class="nav-pin" href="{{ '/' | relative_url }}#contact">CONTACT</a></li>
     </ul>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark theme">Light mode</button>
   </div>
 </nav>
 
@@ -42,5 +49,21 @@
   </div>
 </footer>
 
+<script>
+  (function(){
+    var btn = document.getElementById('theme-toggle');
+    function updateLabel(){
+      var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      btn.textContent = isLight ? 'Dark mode' : 'Light mode';
+    }
+    updateLabel();
+    btn.addEventListener('click', function(){
+      var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateLabel();
+    });
+  })();
+</script>
 </body>
 </html>

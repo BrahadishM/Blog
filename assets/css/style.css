@@ -9,9 +9,22 @@
   --text-faint:  #6B6B6B;
   --border:      #232326;
   --accent:      #C9A876;
+  --code-bg:     #1A1A1D;
   --maxw:        720px;
   --gutter:      24px;
 }
+
+html[data-theme="light"]{
+  --bg:          #FAF9F6;
+  --text:        #1C1C1B;
+  --text-muted:  #5C5C58;
+  --text-faint:  #8A8A85;
+  --border:      #E4E2DC;
+  --accent:      #8A6A3B;
+  --code-bg:     #F0EFEA;
+}
+
+body{ transition: background-color 0.15s ease, color 0.15s ease; }
 
 *, *::before, *::after{ box-sizing: border-box; }
 
@@ -87,6 +100,18 @@ a:focus-visible, button:focus-visible{
   text-decoration: none;
 }
 .nav-pin:hover{ color: var(--text); }
+
+.theme-toggle{
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 5px 11px;
+  cursor: pointer;
+}
+.theme-toggle:hover{ color: var(--text); border-color: var(--text-faint); }
 
 /* ==========================================================================
    HERO — quiet, no ornament
@@ -295,12 +320,12 @@ section.block:last-of-type{ border-bottom: none; }
 .post-content code{
   font-family: ui-monospace, Menlo, monospace;
   font-size: 0.88em;
-  background: #1A1A1D;
+  background: var(--code-bg);
   padding: 1px 5px;
   border-radius: 2px;
 }
 .post-content pre{
-  background: #1A1A1D;
+  background: var(--code-bg);
   border-radius: 2px;
   padding: 16px 18px;
   overflow-x: auto;
