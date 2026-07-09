@@ -30,7 +30,10 @@
       <li><a class="nav-pin" href="{{ '/blog.html' | relative_url }}">LOG</a></li>
       <li><a class="nav-pin" href="{{ '/' | relative_url }}#contact">CONTACT</a></li>
     </ul>
-    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark theme">Light mode</button>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"></path></svg>
+    </button>
   </div>
 </nav>
 
@@ -52,16 +55,11 @@
 <script>
   (function(){
     var btn = document.getElementById('theme-toggle');
-    function updateLabel(){
-      var isLight = document.documentElement.getAttribute('data-theme') === 'light';
-      btn.textContent = isLight ? 'Dark mode' : 'Light mode';
-    }
-    updateLabel();
+    if(!btn) return;
     btn.addEventListener('click', function(){
       var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
-      updateLabel();
     });
   })();
 </script>
